@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  width: 50px;
-  height: auto;
-  pointer-events: none;
-}
 
 .App-header {
   background:white;
@@ -26,9 +21,69 @@
  
 }
 
+.wrapper {
+  max-width: 80%!important;
+  margin: 0px auto!important;
+  width: 100%;
+}
+
+
+
+
+/* Menu  */
+/* Components  */
+
+/* dropdown  */
+.dropdownWrap {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dropdownWrap .dropdown {
+  max-width: 20%;
+  margin: 20px auto;
+}
+.dropdownWrap .colors{
+  min-height: 400px;
+  display: flex;
+  flex: 1!important;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Accordion  */
 .accordion {
   margin: 0px auto;
 }
-.active .content {
-  display: block !important;
+
+/* Search  */
+span.searchmatch {
+  color: #2f8cb6;
+}
+
+.search .button {
+  margin: 10px 0px;
+}
+.search .item {
+  border-bottom: 1px solid #b4b4b4;
+  display: flex;
+  flex-direction: column;
+  padding: 10px!important;
+  text-align: left;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  .menu .item {
+    width: 100%!important;
+}
 }

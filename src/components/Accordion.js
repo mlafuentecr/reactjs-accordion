@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { acordionsArray } from '../data/data'
 
-const Accordion = ({ items }) => {
+const Accordion = () => {
 	const [clikedElement, setclikedElement] = useState('');
 
 	function openAccordionClick(index) {
@@ -12,8 +13,7 @@ const Accordion = ({ items }) => {
 	}
 
 	const RenderedItems = () =>
-		items.map((item, index) => {
-      //<React.Fragment is a jsx element and react dosent count so wont make doble border active
+	acordionsArray.map((item, index) => {
       const active = clikedElement === index ? 'active' : '';
 			return (
 				<div
