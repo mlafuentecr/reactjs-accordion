@@ -53,10 +53,16 @@
   align-items: center;
 }
 
-
+/* acoooos 
 /* Accordion  */
 .accordion {
   margin: 0px auto;
+}
+.active .title {
+  color: black!important;
+}
+.active .content {
+  display: block!important;
 }
 
 /* Search  */

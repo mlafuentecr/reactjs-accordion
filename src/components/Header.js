@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
-const Header = ({setmenuSelected}) => {
+const Header = ({setmenuSelected, menuSelected}) => {
 
   const [selectedClass, setselectedClass]=useState('Accordion');
 
@@ -8,6 +8,13 @@ const Header = ({setmenuSelected}) => {
     setmenuSelected(selected)
     setselectedClass(selected)
   }
+
+	useEffect(() => {
+		//put the the initial menu from app
+		//the first time
+		setmenuSelected(menuSelected)
+    setselectedClass(menuSelected)
+	} )
 
 	return (
 		<header className='App-header'>

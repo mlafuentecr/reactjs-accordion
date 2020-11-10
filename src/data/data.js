@@ -29,7 +29,7 @@ export const acordionsArray = [
 export const dropDownArray = [
   {
     label: 'No option selected',
-    value: ''
+    value: 'none'
   },
   {
     label: 'The color Red',

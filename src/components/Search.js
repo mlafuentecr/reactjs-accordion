@@ -20,26 +20,29 @@ const Search = (props) => {
         }
       });
 
-      if(data && term){setResults(data.query.search);}
-      
-    }
 
-      //antes de buscar de un tiempo de 05 y si el termino es mayor que 1
+          //antes de buscar de un tiempo de 05 y si el termino es mayor que 1
     const timeOutId = setTimeout(() => {
-      if(term.length <= 1){ console.log('limpiando***'); setResults([])}
+      if(data && term){setResults(data.query.search);}
     }, 500);
 
-    search();
-      // this return it call second time useEffect its execute
-    return () =>{
-      clearTimeout(timeOutId)
+      return () =>{
+          // this return it call second time useEffect its execute
+        clearTimeout(timeOutId)
+      }
     }
+
+    search();
     
    //https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=programming
 
   }, [term])
 
 
+  setTimeout(() => {
+    if(term.length <= 1){ console.log('limpiando***'); setResults([])}
+    
+  }, 1000);
   
 
   const RenderedResult = () => results.map((result)=>{

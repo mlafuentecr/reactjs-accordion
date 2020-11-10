@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className='App'>
-      <Header setmenuSelected={setmenuSelected} />
+      <Header setmenuSelected={setmenuSelected} menuSelected={menuSelected}/>
      <MenuChoosen />
   </div>
   );
