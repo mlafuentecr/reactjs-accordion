@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import {wikiURL} from '../data/data'
 
-const Search = (props) => {
+const Search = () => {
   const [term, setTerm] = useState('');
   const [results, setResults] =useState([]);
 
