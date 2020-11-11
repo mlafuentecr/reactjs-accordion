@@ -1,47 +1,32 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
-const Header = ({setmenuSelected, menuSelected}) => {
-
-  const [selectedClass, setselectedClass]=useState('Accordion');
+const Header = ({url}) => {
 
   const active = (selected) =>{
-    setmenuSelected(selected)
-    setselectedClass(selected)
+			window.location.href= selected
   }
-
-	useEffect(() => {
-		//put the the initial menu from app
-		//the first time
-		setmenuSelected(menuSelected)
-    setselectedClass(menuSelected)
-	}, []);
 
 	return (
 		<header className='App-header'>
 	
-			<div className='ui five item menu'>
+			<div className='ui four item menu'>
 
-        <div className={`item ${selectedClass === 'Accordion' ? 'active':''}`} 
+        <div className={`item ${url === '/Accordion' ? 'active':''}`} 
           onClick={() => active('Accordion')}>
 					Accordion
 				</div>
 
-        <div className={`item ${selectedClass === 'List' ? 'active':''}`} 
-         onClick={() => active('List')}>
-					List
-				</div>
-
-        <div className={`item ${selectedClass === 'DropDown' ? 'active':''}`} 
+        <div className={`item ${url === '/DropDown' ? 'active':''}`} 
          onClick={() => active('DropDown')}>
 					DropDown
 				</div>
 
-        <div className={`item ${selectedClass === 'Translate' ? 'active':''}`} 
+        <div className={`item ${url === '/Translate' ? 'active':''}`} 
           onClick={() => active('Translate')}>
 					Translate
 				</div>
 
-				<div className={`item ${selectedClass === 'Search' ? 'active':''}`} 
+				<div className={`item ${url === '/Search' ? 'active':''}`} 
           onClick={() => active('Search')}>
 					Wiki Search 
 				</div>

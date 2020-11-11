@@ -32,7 +32,7 @@ useEffect(() => {
       }
       search()
 
-      }, 1000);
+      }, 500);
 
       //if person type something then clear timeout
       return () => {
@@ -42,7 +42,7 @@ useEffect(() => {
    }
 
  
-}, [lngChoose, searchWord, lngChoose])
+}, [lngChoose, searchWord])
 
 
 
