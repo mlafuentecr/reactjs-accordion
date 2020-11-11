@@ -14,7 +14,7 @@ const Header = ({setmenuSelected, menuSelected}) => {
 		//the first time
 		setmenuSelected(menuSelected)
     setselectedClass(menuSelected)
-	} )
+	}, []);
 
 	return (
 		<header className='App-header'>

@@ -1,21 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { dropDownArray } from '../data/data';
+import React, { useState } from 'react';
 
-const Dropdown = () => {
-	const [colorselect, setcolorselect] = useState('');
 
-	const DropDown = ({ label, array }) => {
-    
+const Dropdown = ( { array, msgs, outPut}) => {
+
+
+	const [optionSelected, setoptionSelected] = useState('');
+
+	const selectHandle = (e)=>{
+		setoptionSelected(e.target.value)
+		 outPut(e.target.value)
+	}
+
+
+	const DropDownItem = ({  array }) => {
+
 		const colorOptions = array.map((item) => {
-      console.log('item');
-      console.log(item);
 			return (
         <option 
         key={item.value} 
         value={item.value}
         defaultValue="none"
           //react wont use selected but value in select input
-        //selected={colorselect === item.value}
         >
 				{item.label}
 				</option>
@@ -23,30 +28,28 @@ const Dropdown = () => {
 		});
 
 		return (
-			<div className=' form wrapper dropdownWrap'>
-				<label>{label}</label>
+			<div className={`form wrapper dropdownWrap color-${optionSelected}`}>
+				<label>{msgs.title}</label>
 				<select
-         value={colorselect}
-					onChange={(e) => setcolorselect(e.target.value)}
+         value={optionSelected}
+					onChange={selectHandle}
 					className='ui dropdown'
 				>
 					{colorOptions}
 				</select>
-				<div
-					style={{ backgroundColor: colorselect, color: 'white' }}
-					className='colors'
-				>
-					{colorselect !== '' ? `you choose ${colorselect}` : ''}
+
+				<div className='context output'	>
+					{optionSelected !== '' ? `${msgs.message} ${optionSelected}` : ''}
 				</div>
+
 			</div>
 		);
 	};
 
 	return (
-    <DropDown 
-    label={' Pick your favorite color:'} 
-    array={dropDownArray} 
-    selection={colorselect}
+    <DropDownItem 
+    array={array} 
+    selection={optionSelected}
     />
 	);
 };

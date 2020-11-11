@@ -11,20 +11,20 @@ const Search = (props) => {
 
     const search = async()=>{
 
-     const { data } =  await axios.get(wikiURL ,{
-        params:{
-          action: 'query',
-          list: 'search',
-          format:  'json',
-          srsearch: term
-        }
-      });
+      const { data } =  await axios.get(wikiURL ,{
+          params:{
+            action: 'query',
+            list: 'search',
+            format:  'json',
+            srsearch: term
+          }
+        });
 
 
-          //antes de buscar de un tiempo de 05 y si el termino es mayor que 1
-    const timeOutId = setTimeout(() => {
-      if(data && term){setResults(data.query.search);}
-    }, 500);
+        //put search api in time out if person types something wait
+        const timeOutId = setTimeout(() => {
+          if(data && term){setResults(data.query.search);}
+        }, 1000);
 
       return () =>{
           // this return it call second time useEffect its execute
@@ -34,14 +34,12 @@ const Search = (props) => {
 
     search();
     
-   //https://en.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=programming
 
   }, [term])
 
 
   setTimeout(() => {
     if(term.length <= 1){ console.log('limpiando***'); setResults([])}
-    
   }, 1000);
   
 

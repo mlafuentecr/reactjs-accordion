@@ -26,7 +26,7 @@ export const acordionsArray = [
 ]
 
 
-export const dropDownArray = [
+export const dropDownColorArray = [
   {
     label: 'No option selected',
     value: 'none'
@@ -44,3 +44,35 @@ export const dropDownArray = [
     value: 'green'
   },
 ]
+export const dropDownColorsMsg = {
+    title: 'Pick your favorite color:',
+    message: 'You choose the color: '
+  }
+
+
+
+
+  
+export const dropDowntransArray = [
+  {
+    label: 'No option selected',
+    value: 'none'
+  },
+  {
+    label: 'English',
+    value: 'en'
+  },
+  {
+    label: 'Spanish',
+    value: 'es'
+  },
+  {
+    label: 'German',
+    value: 'de'
+  },
+]
+  export const dropDownTranslatesMsg = {
+    title: 'Select Lenguage',
+    message: 'You dropDownTranslatesMsg: '
+  }
+
