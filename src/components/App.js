@@ -10,7 +10,7 @@ function App() {
   return (
     <div className='App'>
      <Header url={url} />
-     <Route url={url}/>
+     <div className="routerWrap"><Route url={url}/></div>
   </div>
   );
 }

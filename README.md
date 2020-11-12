@@ -10,7 +10,7 @@ npm install
 Acordarse de Cross-Origin Request Blocked: The Same Origin Policy disallows reading the remote
 lo corro en chrome donde se los habia quitado en firefox local lo va a bloquear eso es de cada browser
 Runs the app in the development mode.\
-<img src="https://raw.githubusercontent.com/mlafuentecr/images/master/widget.jpg" width="100%" />
+<img src="https://raw.githubusercontent.com/mlafuentecr/images/master/1widget.jpg" width="100%" />
 
 
 ### googleTraslate.js have the api and the key for search

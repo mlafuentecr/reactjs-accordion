@@ -3,6 +3,9 @@ import axios from 'axios'
 import {wikiURL} from '../data/data'
 
 const Search = () => {
+
+
+
   const [term, setTerm] = useState('');
   const [results, setResults] =useState([]);
 
@@ -11,7 +14,7 @@ const Search = () => {
 
     const search = async()=>{
 
-      const { data } =  await axios.get(wikiURL ,{
+      const { data } =  await axios.get(wikiURL, {
           params:{
             action: 'query',
             list: 'search',
@@ -24,23 +27,23 @@ const Search = () => {
         //put search api in time out if person types something wait
         const timeOutId = setTimeout(() => {
           if(data && term){setResults(data.query.search);}
+          if(term.length < 2){ console.log('limpiando***');  setResults([]);  }
         }, 1000);
 
-      return () =>{
-          // this return it call second time useEffect its execute
-        clearTimeout(timeOutId)
-      }
+
+        return () => clearTimeout(timeOutId)
+    
     }
 
     search();
     
+   
+
 
   }, [term])
 
 
-  setTimeout(() => {
-    if(term.length <= 1){ console.log('limpiando***'); setResults([])}
-  }, 1000);
+
   
 
   const RenderedResult = () => results.map((result)=>{

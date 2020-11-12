@@ -1,35 +1,35 @@
 import React from 'react'
-
+import logo from '../components/images/logo512.png'
 const Header = ({url}) => {
 
-  const active = (selected) =>{
-			window.location.href= selected
-  }
+
 
 	return (
 		<header className='App-header'>
-	
+			<div className="logo">
+				<img src={logo} alt="logo"/>
+			</div>
 			<div className='ui four item menu'>
 
-        <div className={`item ${url === '/Accordion' ? 'active':''}`} 
-          onClick={() => active('Accordion')}>
+        <a className={`item ${url === '/Accordion' ? 'active':''}`} 
+          href='Accordion'>
 					Accordion
-				</div>
+				</a>
 
-        <div className={`item ${url === '/DropDown' ? 'active':''}`} 
-         onClick={() => active('DropDown')}>
+        <a className={`item ${url === '/DropDown' ? 'active':''}`} 
+         href='DropDown'>
 					DropDown
-				</div>
+				</a>
 
-        <div className={`item ${url === '/Translate' ? 'active':''}`} 
-          onClick={() => active('Translate')}>
+        <a className={`item ${url === '/Translate' ? 'active':''}`} 
+          href='Translate'>
 					Translate
-				</div>
+				</a>
 
-				<div className={`item ${url === '/Search' ? 'active':''}`} 
-          onClick={() => active('Search')}>
+				<a className={`item ${url === '/Search' ? 'active':''}`} 
+          href='Search'>
 					Wiki Search 
-				</div>
+				</a>
 
 			</div>
 		</header>

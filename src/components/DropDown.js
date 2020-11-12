@@ -28,7 +28,7 @@ const Dropdown = ( { array, msgs, outPut}) => {
 		});
 
 		return (
-			<div className={`form wrapper dropdownWrap color-${optionSelected}`}>
+			<div className={`form  dropdownWrap color-${optionSelected}`}>
 				<label>{msgs.title}</label>
 				<select
          value={optionSelected}
